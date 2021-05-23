@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ubuntu-container
-        image: ubuntu
+        image: apache2
    replicas: 4
    selector:
            matchLabels:
