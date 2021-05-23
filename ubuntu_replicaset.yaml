@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ubuntureplicaset
+  labels:
+    app: ubuntu-cluster
+    type: os-cluster
+spec:
+   template:
+    metadata:
+      name: ubuntureplicaset
+      labels:
+        app: ubuntu-cluster
+        type: os-cluster
+    spec:
+      containers:
+      - name: ubuntu-container
+        image: ubuntu
+   replicas: 4
+   selector:
+           matchLabels:
+            app: ubuntu-cluster
+            type: os-cluster
