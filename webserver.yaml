@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: webserver
+  labels: 
+   name: webserver-pod
+   type: caching server
+spec:
+  containers:
+    - name: redis-container
+      image: redis
+    - name: mysql-container
+      image: mysql
+    - name: httpd-container
+      image: httpd
+    
+
+ 
