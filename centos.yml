@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-pod
+  labels:
+    name: centos-docker
+    type: linux-os
+spec:
+  containers:
+   -  name: linux-centos
+      image: centos
