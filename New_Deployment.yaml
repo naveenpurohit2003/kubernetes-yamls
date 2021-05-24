@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unique-webserver
+  labels:
+   app: unique-app
+   type: all-in-one
+spec:
+  template:
+     metadata:
+      name: all-in-one-pod
+      labels:
+       app: unique-app
+       type: all-in-one
+     spec:
+        containers:
+        - name: node-container
+          image: node
+        - name: postgres-container
+          image: postgres
+        - name: traefik-webserver
+          image: traefik
+  replicas: 3
+  selector:
+         matchLabels: 
+          type: all-in-one
