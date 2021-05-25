@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-server
+  labels:
+    app: tomcat-server
+    type: front-end
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+     app: tomcat-server
+     type: front-end
+
+  template:
+    metadata:
+      name: tomcat-server
+      labels:
+        app: tomcat-server
+        type: front-end
+    spec:
+        containers:
+          - name: tomcat
+            image: tomcat
+            
+    
