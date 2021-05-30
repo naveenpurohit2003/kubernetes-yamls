@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: demorepo-artifactory
+        labels:
+          type: httpd-server
+spec:
+  selector:
+    matchLabels:
+      type: httpd-server 
+  template:
+        metadata:
+          name: demorepo-artifactory
+          labels:
+            type: httpd-server
+        spec:
+          containers:
+            - name: httpd-server-artifactory
+              image: 192.168.1.201:8081/naveen-docker-repo/naveenapp:latest
+  replicas: 3
+    
