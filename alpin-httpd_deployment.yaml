@@ -20,3 +20,4 @@ spec:
         selector:
                 matchLabels:
                  type: httpd-frontend-server
+                 #Note for rememberance 
