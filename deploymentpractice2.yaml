@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: ubuntu
+ labels:
+   app: ubuntu-docker
+   type: ubuntu
+spec:
+ template:
+   metadata:
+     name: ubuntu-docker-pod
+     labels:
+       app: ubuntu-docker
+   spec:
+     containers:
+       - name: ubuntu
+         image: ubuntu
+ replicas: 3
+ selector:
+    matchLabels:
+      app: ubuntu-docker
+    
