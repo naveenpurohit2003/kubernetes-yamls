@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-test-deployment
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      name: my-test-deployment-pod
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress      
